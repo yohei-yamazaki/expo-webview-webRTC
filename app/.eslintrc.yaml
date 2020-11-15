@@ -1,0 +1,73 @@
+---
+# globalsは https://github.com/expo/expo/blob/a228d5016823b51289c51046b55985bd3f6822f2/packages/eslint-config-universe/native.js#L20-L42 を参考に
+globals:
+  __DEV__: false
+  Atomics: false
+  ErrorUtils: false
+  FormData: false
+  SharedArrayBuffer: false
+  XMLHttpRequest: false
+  alert: false
+  cancelAnimationFrame: false
+  cancelIdleCallback: false
+  clearImmediate: false
+  clearInterval: false
+  clearTimeout: false
+  fetch: false
+  navigator: false
+  process: false
+  requestAnimationFrame: false
+  requestIdleCallback: false
+  setImmediate: false
+  setInterval: false
+  setTimeout: false
+  window: false
+extends:
+  - plugin:react/recommended
+  - plugin:react-hooks/recommended
+plugins:
+  - filenames-simple
+rules:
+  filenames-simple/naming-convention:
+    - error
+    - rule: PascalCase
+settings:
+  react:
+    version: detect
+  import/ignore:
+    - "node_modules/react-native/index\\.js$"
+overrides:
+  - files:
+      - '**/@types/**'
+    plugins:
+      - filenames-simple
+    rules:
+      filenames-simple/naming-convention: off
+  - files:
+      - '**/*.tsx'
+    rules:
+      react/prop-types: off
+  - files:
+      - app.config.ts
+    env:
+      node: true
+    plugins:
+      - filenames-simple
+      - import
+    rules:
+      filenames-simple/naming-convention: off
+      import/no-default-export: off
+  - files:
+      - babel.config.js
+      - metro.config.js
+    env:
+      node: true
+    parserOptions:
+      ecmaVersion: 2015
+      sourceType: script
+    plugins:
+      - '@typescript-eslint'
+      - filenames-simple
+    rules:
+      '@typescript-eslint/no-var-requires': off
+      filenames-simple/naming-convention: off
