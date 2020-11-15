@@ -25,10 +25,6 @@ globals:
 extends:
   - plugin:react/recommended
   - plugin:react-hooks/recommended
-rules:
-  filenames-simple/naming-convention:
-    - error
-    - rule: PascalCase
 settings:
   react:
     version: detect
