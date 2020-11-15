@@ -25,8 +25,6 @@ globals:
 extends:
   - plugin:react/recommended
   - plugin:react-hooks/recommended
-plugins:
-  - filenames-simple
 rules:
   filenames-simple/naming-convention:
     - error
@@ -38,12 +36,6 @@ settings:
     - "node_modules/react-native/index\\.js$"
 overrides:
   - files:
-      - '**/@types/**'
-    plugins:
-      - filenames-simple
-    rules:
-      filenames-simple/naming-convention: off
-  - files:
       - '**/*.tsx'
     rules:
       react/prop-types: off
@@ -52,10 +44,8 @@ overrides:
     env:
       node: true
     plugins:
-      - filenames-simple
       - import
     rules:
-      filenames-simple/naming-convention: off
       import/no-default-export: off
   - files:
       - babel.config.js
@@ -67,7 +57,5 @@ overrides:
       sourceType: script
     plugins:
       - '@typescript-eslint'
-      - filenames-simple
     rules:
       '@typescript-eslint/no-var-requires': off
-      filenames-simple/naming-convention: off
