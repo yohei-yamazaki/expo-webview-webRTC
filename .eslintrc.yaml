@@ -1,0 +1,85 @@
+---
+root: true
+env:
+  es2020: true
+extends:
+  - eslint:recommended
+  - plugin:eslint-comments/recommended
+  - plugin:import/recommended
+  - plugin:import/typescript
+  - plugin:@typescript-eslint/recommended
+  - prettier
+  - plugin:prettier/recommended
+  - prettier/@typescript-eslint
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 2020
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+  - import
+rules:
+  'eol-last': error
+  '@typescript-eslint/explicit-module-boundary-types': off
+  '@typescript-eslint/naming-convention':
+    - warn
+    - selector: default
+      format:
+        - camelCase
+        - PascalCase
+      leadingUnderscore: allow
+    - selector: variable
+      modifiers:
+        - const
+      format:
+        - camelCase
+        - PascalCase
+        - UPPER_CASE
+    - selector: typeLike
+      format:
+        - PascalCase
+  '@typescript-eslint/no-unused-vars': off
+  '@typescript-eslint/no-unused-vars-experimental': warn
+  'eslint-comments/disable-enable-pair':
+    - error
+    - allowWholeFile: true
+  'import/order':
+    - warn
+    - newlines-between: always
+      pathGroups:
+        - pattern: react{,-dom,-native}
+          position: before
+          group: external
+      pathGroupsExcludedImportTypes:
+        - react
+      alphabetize:
+        order: asc
+        caseInsensitive: true
+  'import/no-default-export': error
+  'import/no-deprecated': error
+  'import/prefer-default-export': off
+overrides:
+  - files:
+      - 'app/src/externals/graphql/types/Generated.tsx'
+    rules:
+      '@typescript-eslint/ban-types': off
+      '@typescript-eslint/no-explicit-any': off
+      '@typescript-eslint/naming-convention': off
+  - files:
+      - '**/__tests__/**'
+    env:
+      'jest/globals': true
+    extends:
+      - plugin:jest/recommended
+      - plugin:jest/style
+    plugins:
+      - jest
+    rules:
+      jest/consistent-test-it:
+        - error
+        - fn: it
+      jest/require-top-level-describe: warn
+    settings:
+      import/resolver:
+        typescript:
+          project: "**/tsconfig.json"

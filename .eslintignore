@@ -1,0 +1,7 @@
+.git/
+.github/
+.vscode/
+build/
+deployments/
+**/coverage/
+**/node_modules/

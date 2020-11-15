@@ -1,0 +1,38 @@
+{
+  "name": "expo-webview-webRTC",
+  "version": "0.0.1",
+  "author": "yohei-yamazaki <y.y.takkyuu.love@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "app"
+  ],
+  "scripts": {
+    "codegen": "graphql-codegen --config graphql-codegen.yaml",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "eslint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
+    "sort-package-json": "sort-package-json **/package.json"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.18.0",
+    "@graphql-codegen/typescript": "^1.17.11",
+    "@graphql-codegen/typescript-document-nodes": "^1.17.8",
+    "@graphql-codegen/typescript-operations": "^1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "^2.0.7",
+    "@graphql-codegen/typescript-resolvers": "^1.17.10",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "graphql": "^15.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "sort-package-json": "^1.46.1"
+  }
+}
