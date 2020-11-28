@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "app"
+    "app",
+    "web"
   ],
   "scripts": {
     "codegen": "graphql-codegen --config graphql-codegen.yaml",

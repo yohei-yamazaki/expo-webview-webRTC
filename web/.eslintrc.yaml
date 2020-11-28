@@ -1,0 +1,33 @@
+---
+env:
+  browser: true
+extends:
+  - 'plugin:react/recommended'
+  - 'plugin:react-hooks/recommended'
+plugins:
+  - filenames-simple
+rules:
+  filenames-simple/naming-convention:
+    - error
+    - rule: PascalCase
+settings:
+  react:
+    version: detect
+overrides:
+  - files:
+      - 'src/**/*.tsx'
+    rules:
+      'react/prop-types': 'off'
+  - files:
+      - webpack.config.js
+    env:
+      node: true
+    parserOptions:
+      ecmaVersion: 2015
+      sourceType: script
+    plugins:
+      - '@typescript-eslint'
+      - filenames-simple
+    rules:
+      '@typescript-eslint/no-var-requires': off
+      filenames-simple/naming-convention: off

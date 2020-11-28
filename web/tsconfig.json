@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "types": [
+      "jest",
+      "node",
+      "react",
+      "react-dom",
+      "react-router-dom"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "module": "amd",
+    "jsx": "react",
+    /* https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#type-only-modules-watching */
+    "importsNotUsedAsValues": "preserve"
+  },
+  "include": [
+    "src"
+  ]
+}
